@@ -1,5 +1,7 @@
 let animationImage = document.getElementById('profile-animation');
 
+// For animation behind profile pic
+// this will rotate a png image behind profile pic
 var profileAnimation = function(){
     let angle = 0;
     let flag = true;
