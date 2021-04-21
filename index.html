@@ -2,7 +2,7 @@
     <head>
         <title> Rajesh Roul-Portfolio</title>
         <!-- Added font awesome -->
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <!-- CSS file linking -->
@@ -10,39 +10,51 @@
     </head>
 
     <body>
-        <!-- Header or Top Navigation -->
-        <header>
-            <a href=""> About </a>
-            <a href=""> Skills </a>
-            <a href=""> Education </a>
-            <a href=""> Experience </a>
-            <a href=""> Projects </a>
-            <a href=""> Contact </a>
-        </header>
-
-        <!-- Main Content Section -->
-        <main>
-            <!-- Profile Section -->
-            <section id="section-profile">
-                <div id="profile-contents">
-                    <div id="profile-content-text">
-                        <!-- Profile Text Box -->
-                        <div id="profile-text-box">
-                            <h1> Rajesh Roul </h1>
-                            <h4> Full Stack Web Developer </h4>
-                        </div>
+        
+        <!-- Profile Section-->
+        <!-- This will be displayed when site is loaded -->
+        <section id="section-profile">
+            <div id="profile-contents">
+                <div id="profile-content-text">
+                    <!-- Profile Text Box -->
+                    <!-- knowledge icon showing tech tools logo -->
+                    <img src="pics/logo-node-js.svg" alt="logo" id="knowledge-icon">
+                    <div id="profile-text-box">
+                        <h1> Rajesh Roul </h1>
+                        <h4> Full Stack Web Developer </h4>
                     </div>
-                    <div id="profile-content-pic">
-                        <!-- Profile Pic Box -->
-                        <div id="profile-pic-box">
-                            <!-- Profile Animation Image -->
-                            <img src="pics/profile-animation.png" alt="profile animation" id="profile-animation">
-                            <!-- Profile Pic -->
-                            <img src="pics/profile.jpg" alt="Profile pic will appear here" id="profile-pic">
-                        </div>
+                    <!-- This will show a link to navigate to main section -->
+                    <div id="profile-swipe-up">
+                        <a href="#main-content">
+                            <span> About Me </span>
+                            <i class="fas fa-angle-double-up"></i>
+                        </a>
                     </div>
                 </div>
-            </section>
+                <div id="profile-content-pic">
+                    <!-- Profile Pic Box -->
+                    <div id="profile-pic-box">
+                        <!-- Profile Animation Image -->
+                        <img src="pics/profile-animation.png" alt="profile animation" id="profile-animation">
+                        <!-- Profile Pic -->
+                        <img src="pics/profile.jpg" alt="Profile pic will appear here" id="profile-pic">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Section -->
+        <main id="main-content">
+
+            <!-- Header or Top Navigation -->
+            <header>
+                <a href=""> About </a>
+                <a href=""> Skills </a>
+                <a href=""> Education </a>
+                <a href=""> Experience </a>
+                <a href=""> Projects </a>
+                <a href=""> Contact </a>
+            </header>
 
             <!-- About Section -->
             <section id="section-about">
