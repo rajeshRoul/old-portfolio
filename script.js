@@ -21,4 +21,36 @@ var profileAnimation = function(){
     }, 200);
 }
 
+var changeToolPic = function(){
+    let tools = [
+        "pics/tool-logos/html.png",
+        "pics/tool-logos/css.png",
+        "pics/tool-logos/express.png",
+        "pics/tool-logos/javascript.png",
+        "pics/tool-logos/node.svg",
+        "pics/tool-logos/java.png"
+    ]
+    let image = document.getElementById('knowledge-icon');
+    let i=0;
+    let flag = true;
+    setInterval(function(){
+        if(flag){
+            image.style.width = "220px";
+            // image.style.height = "160px";
+            if(i >= tools.length){
+                i=0;
+            }
+            image.setAttribute("src", tools[i]);
+            i += 1;
+            flag = false;
+        }else{
+            image.style.width = 0;
+            // image.style.height = 0;
+            flag = true;
+        }
+        
+    }, 1500);
+}
+
+changeToolPic();
 profileAnimation();
