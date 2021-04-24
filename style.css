@@ -186,7 +186,8 @@ main{
 .section-heading{
     color: var(--color-accent-light);
     font-size: 2rem;
-    text-decoration: underline;
+    font-weight: bold;
+    margin-top: 0;
 }
 
                     /* about section start */
@@ -212,7 +213,82 @@ main{
 #about-content p span{
     color: orange;
 }
+                    /* About Section End */
 
-.section-heading{
-    margin-top: 0;
+                    /* Skills Section Start */
+#section-skills{
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--color-primary);
+}
+
+#skills-content{
+    margin-top: 35px;
+    margin-bottom: 15px;
+    max-width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill{
+    width: 200px;
+    background-color: white;
+    overflow: hidden;
+    margin: 0px 20px 40px;
+    border-radius: 22px;
+}
+
+.skill-percent{
+    height: 100%;
+    padding: 12px 5px;
+    box-shadow: 1px 0px 5px 3px rgb(71, 69, 69);
+}
+
+.skill-percent span{
+    color: white;
+    font-weight: bold;
+    margin-left: 5px;
+    font-size: 1.2rem;
+}
+
+/* skills percents */
+
+.fifty-percent{
+    width: 50%;
+    background-color: darkorange;
+}
+
+.seventy-percent{
+    width: 70%;
+    background-color: darkcyan;
+}
+
+.eighty-percent{
+    width: 80%;
+    background-color: darkmagenta;
+}
+
+.ninety-percent{
+    width: 90%;
+    background-color: rgb(45, 129, 179);
+}
+
+.hundred-percent{
+    width: 100%;
+    background-color: darkgreen;
+}
+                    /* Skills section End */
+
+                    /* Education Section Start */
+#section-education{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
 }
