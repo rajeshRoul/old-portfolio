@@ -57,7 +57,7 @@ header a:hover{
 /* Main section settings */
 main{
     width: 100%;
-    height: 200vh;
+    height: auto;
     margin: 0;
     background-color: var(--color-primary-light);
 }
@@ -188,6 +188,7 @@ main{
     font-size: 2rem;
     font-weight: bold;
     margin-top: 0;
+    margin-bottom: 30px;
 }
 
                     /* about section start */
@@ -291,4 +292,96 @@ main{
     flex-direction: column;
     align-items: center;
     padding: 40px 20px;
+}
+
+#education-content{
+    width: 80%;
+    height: fit-content;
+    position: relative;
+}
+
+.education{
+    width: 35%;
+    background-image: linear-gradient(to bottom right, var(--color-secondary), var(--color-primary-light), var(--color-primary));
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 5px -5px 5px 2px rgba(18, 22, 53, 0.411);
+    margin-bottom: 30px;
+    position: relative;
+    left: 5%;
+}
+
+.education-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-text);
+}
+
+.education-header img{
+    height: 80px;
+    background-color: white;
+    padding: 8px;
+}
+
+.education-title h1{
+    color: var(--color-primary);
+    margin: 5px 0;
+}
+
+.education-title h2{
+    color: orange;
+    margin: 5px 0;
+}
+
+.education-title h4{
+    color: var(--color-text);
+    margin: 5px 0;
+}
+
+.education-details{
+    color: var(--color-text);
+    margin-top: 20px;
+}
+
+.education:nth-child(2n+2){
+    left: 55%;
+}
+
+                    /* Plane-Car Effect Start */
+.dot{
+    position: relative;
+    left: -5%;
+    margin-bottom: 15rem;
+    background-color: orange;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    z-index: 2;
+}
+
+.plane-car-effect{
+    position: absolute;
+    width: 5%;
+    height: 75%;
+    left: 50%;
+    top: 5%;
+    z-index: 1;
+    border-left: 3px dashed var(--color-secondary-light);
+}
+
+.plane-car{
+    position: sticky;
+    top: 30vh;
+    left: -20px;
+    z-index: 3;
+}
+
+.plane-car i{
+    font-size: 2rem;
+    transform: rotate(90deg);
+    color: var(--color-accent);
+    position: absolute;
+    left: -19px;
+    top: -5px;
 }
