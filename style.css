@@ -37,6 +37,7 @@ header{
     background-color: rgba(0, 0, 0, 0.356);
     position: sticky;
     top: 0;
+    z-index: 50;
 }
 
 /* Header elements customizations */
@@ -57,7 +58,7 @@ header a:hover{
 /* Main section settings */
 main{
     width: 100%;
-    height: auto;
+    height: 500vh;
     margin: 0;
     background-color: var(--color-primary-light);
 }
@@ -285,8 +286,17 @@ main{
 }
                     /* Skills section End */
 
-                    /* Education Section Start */
+                    /* Experience/Education Section Start */
 #section-education{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: var(--color-primary);
+}
+
+#section-experience{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -294,13 +304,13 @@ main{
     padding: 40px 20px;
 }
 
-#education-content{
+#ex-education-content{
     width: 80%;
     height: fit-content;
     position: relative;
 }
 
-.education{
+.ex-education{
     width: 35%;
     background-image: linear-gradient(to bottom right, var(--color-secondary), var(--color-primary-light), var(--color-primary));
     padding: 5px;
@@ -311,48 +321,49 @@ main{
     left: 5%;
 }
 
-.education-header{
+.ex-education-header{
     width: 100%;
     display: flex;
     justify-content: space-between;
     color: var(--color-text);
 }
 
-.education-header img{
+.ex-education-header img{
     height: 80px;
     background-color: white;
     padding: 8px;
 }
 
-.education-title h1{
+.ex-education-title h1{
     color: var(--color-primary);
     margin: 5px 0;
+    text-shadow: 0 0 2px white;
 }
 
-.education-title h2{
+.ex-education-title h2{
     color: orange;
     margin: 5px 0;
 }
 
-.education-title h4{
+.ex-education-title h4{
     color: var(--color-text);
     margin: 5px 0;
 }
 
-.education-details{
+.ex-education-details{
     color: var(--color-text);
     margin-top: 20px;
 }
 
-.education:nth-child(2n+2){
+.ex-education:nth-child(2n+1){
     left: 55%;
 }
 
                     /* Plane-Car Effect Start */
 .dot{
     position: relative;
-    left: -5%;
-    margin-bottom: 15rem;
+    left: -5px;
+    /* margin-bottom: 15rem; */
     background-color: orange;
     border-radius: 50%;
     width: 10px;
@@ -363,25 +374,37 @@ main{
 .plane-car-effect{
     position: absolute;
     width: 5%;
-    height: 75%;
+    height: 67%;
     left: 50%;
-    top: 5%;
+    top: 16%;
     z-index: 1;
     border-left: 3px dashed var(--color-secondary-light);
 }
 
 .plane-car{
     position: sticky;
-    top: 30vh;
+    top: 40vh;
     left: -20px;
     z-index: 3;
 }
 
 .plane-car i{
-    font-size: 2rem;
+    font-size: 3rem;
     transform: rotate(90deg);
-    color: var(--color-accent);
+    color: var(--color-accent-light);
     position: absolute;
-    left: -19px;
-    top: -5px;
+    left: -30px;
+    top: -12px;
+    text-shadow: 0 0 8px red;
 }
+
+.dots-div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+                    /* Plane Car Effect End */
+                    /* Experience/Education Section End */
+
