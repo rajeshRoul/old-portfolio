@@ -408,3 +408,39 @@ main{
                     /* Plane Car Effect End */
                     /* Experience/Education Section End */
 
+                    /* Certificates Section Start */
+#section-certificates{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 0;
+}
+
+#certificates-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#certificates-content a{
+    text-decoration: none;
+    margin: 30px;
+}
+
+.certificate{
+    display: flex;
+    padding: 10px;
+    background-image: radial-gradient(var(--color-primary-light) 60%, var(--color-primary));
+    border-radius: 10px;
+}
+
+.certificate img{
+    height: 150px;
+    margin-right: 15px;
+}
+
+.certificate div *{
+    color: var(--color-text);
+}
