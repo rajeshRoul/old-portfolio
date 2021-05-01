@@ -58,9 +58,10 @@ header a:hover{
 /* Main section settings */
 main{
     width: 100%;
-    height: 500vh;
+    height: auto;
     margin: 0;
     background-color: var(--color-primary-light);
+    overflow: hidden;
 }
 
 /* Profile section settings */
@@ -182,6 +183,50 @@ main{
     transition-timing-function: linear;
     transition-delay: 0s;
 }
+
+            /* Responsive Profile */
+@media only screen and (max-width: 1280px) {
+    #profile-contents{
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh;
+    }
+    #profile-content-pic{
+        height: fit-content;
+        width: 100%;
+    }
+    #profile-pic{
+        width: 250px;
+        height: 250px;
+    }
+    #profile-animation{
+        width: 500px;
+        height: 500px;
+    }
+    #profile-content-text{
+        height: auto;
+        width: 80%;
+        align-items: space-around;
+    }
+    #profile-text-box{
+        padding: 5px 10px;
+        margin: 10px 5px;
+    }
+    #profile-text-box *{
+        margin: 1.2rem 0px;
+    }
+    #profile-text-box h1{
+        font-size: 3rem;
+    }
+    #profile-text-box h4{
+        font-size: 2rem;
+    }
+    #knowledge-icon{
+        display: none;
+    }
+}
+
                     /* main section end */
 
 .section-heading{
@@ -443,4 +488,161 @@ main{
 
 .certificate div *{
     color: var(--color-text);
+}
+                    /* Certificates Section Start */
+
+                    /* Accomplishment Section Start */
+#section-accomplishment{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+    width: 100%;
+    padding: 40px 0px;
+}
+
+#accomplishment-content{
+    background-color: var(--color-primary-light);
+    padding: 30px 10px;
+    border-radius: 10px;
+}
+
+#accomplishment-content *{
+    color: var(--color-text);
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+#accomplishment-content li{
+    margin-top: 20px;
+}
+
+#accomplishment-content a:hover{
+    color: var(--color-secondary-light);
+}
+                    /* Accomplishment Section End */
+
+                    /* Portfolio Section Start */
+#section-portfolio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0px;
+}
+
+#portfolio-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#portfolio-content *{
+    color: var(--color-text);
+
+}
+                    /* Portfolio Section End */
+
+                    /* Contact Section Start */
+#section-contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0px;
+    background-image: linear-gradient(to bottom, var(--color-primary), var(--color-primary-light));
+}
+
+#contact-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#top-outer-contact-div{
+    display: flex;
+    width: 100%;
+}
+
+#message-form{
+    width: 50%;
+    text-align: center;
+    padding: 0px 5rem;
+}
+
+#message-form input, textarea{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--color-text);
+    width: 100%;
+    font-size: 1.3rem;
+    margin-top: 40px;
+    outline: none;
+    color: var(--color-text);
+}
+
+#message-form input:focus, textarea:focus{
+    border-bottom: 2px solid var(--color-secondary-light);
+}
+
+#message-form button{
+    color: white;
+    background-color: transparent;
+    outline: none;
+    border: 3px solid var(--color-text);
+    padding: 8px;
+    font-size: 1.5rem;
+    margin-top: 40px;
+}
+
+#message-form button:hover{
+    border-color: var(--color-secondary-light);
+}
+
+#message-form button:focus{
+    border-color: var(--color-secondary-light);
+    color: var(--color-secondary-light);
+}
+
+#get-in-touch-div{
+    width: 50%;
+    padding: 0px 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#get-in-touch-div *{
+    color: var(--color-text);
+}
+
+#get-in-touch-div div{
+    margin-bottom: 10px;
+}
+
+#contact-social ul{
+    text-align: center;
+    list-style: none;
+    padding-left: 0px;
+    margin: 0px;
+}
+
+#contact-social ul li{
+    margin: 15px;
+    display: inline-block;
+    font-weight: 100;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+#contact-social ul li a{
+    color: white;
+}
+
+#contact-social ul li:hover{
+    box-shadow: 0 0 3px 3px var(--color-text);
 }
