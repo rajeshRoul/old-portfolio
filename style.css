@@ -357,6 +357,29 @@ main{
     font-size: 1.2rem;
 }
 
+/* Skills Responsiveness */
+@media only screen and (max-width: 660px) {
+    #section-skills{
+        padding: 40px 8px;
+    }
+    #skills-content{
+        max-width: 95%;
+    }
+    .skill{
+        width: 195px;
+        background-color: white;
+        overflow: hidden;
+        margin: 0px 10px 20px;
+        border-radius: 22px;
+    }
+    
+    .skill-percent{
+        height: 100%;
+        padding: 7px 2px;
+        box-shadow: 1px 0px 5px 3px rgb(71, 69, 69);
+    }
+}
+
 /* skills percents */
 
 .fifty-percent{
@@ -482,6 +505,7 @@ main{
 
 .plane-car{
     position: sticky;
+    position: -webkit-sticky;
     top: 40vh;
     left: -20px;
     z-index: 3;
