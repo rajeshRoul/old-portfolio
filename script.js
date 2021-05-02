@@ -54,3 +54,10 @@ var changeToolPic = function(){
 
 changeToolPic();
 profileAnimation();
+
+let headerButton = document.getElementById("header-option-button");
+let headerItems = document.getElementById("header-options-small-screen");
+headerButton.addEventListener('click', function(){
+        headerItems.classList.toggle("header-options-hide");
+        headerItems.classList.toggle("header-options-view");
+})
