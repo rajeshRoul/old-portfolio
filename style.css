@@ -797,6 +797,15 @@ main{
     box-shadow: 0 0 3px 3px var(--color-text);
 }
 
+#result-status{
+    background-image: linear-gradient(to right, green, rgb(0, 73, 0));
+    color: var(--color-text);
+    padding: 0px 3px;
+    margin-top: 5px;
+    border-radius: 10px;
+    display: none;
+}
+
 /* Contact Section Responsiveness */
 @media only screen and (max-width: 760px) {
     #top-outer-contact-div{

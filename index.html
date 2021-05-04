@@ -481,12 +481,17 @@
                 </div>
                 <div id="contact-content">
                     <div id="top-outer-contact-div">
-                        <form action="" id="message-form">
-                            <input type="text" id="msg-name" placeholder="Your Name" name="name">
-                            <input type="email" id="msg-email" placeholder="Your Email" name="email">
-                            <textarea name="message" id="msg-message" placeholder="Message"></textarea>
-                            <button type="button"> Send Message </button>
+                        <!-- Message Form -->
+                        <form id="message-form" class="gform">
+                            <input class='formVal' type="text" id="msg-name" placeholder="Your Name" name="name">
+                            <input class='formVal' type="email" id="msg-email" placeholder="Your Email" name="email">
+                            <textarea class='formVal' name="message" id="msg-message" placeholder="Message"></textarea>
+                            <button type="button" onclick="myFunction();"> Send Message </button>
+                            <div id="result-status">
+                                <h2><em>Thanks</em> for contacting! I will get back to you soon!</h2>
+                            </div>
                         </form>
+
                         <div id="get-in-touch-div">
                             <h3>Get in touch</h3>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>

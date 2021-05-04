@@ -1,5 +1,6 @@
 let animationImage = document.getElementById('profile-animation');
 
+
 // For animation behind profile pic
 // this will rotate a png image behind profile pic
 var profileAnimation = function(){
@@ -50,6 +51,32 @@ var changeToolPic = function(){
         }
         
     }, 1500);
+}
+
+function myFunction()
+{
+    var elements = document.getElementsByClassName("formVal");
+    var formData = new FormData(); 
+    for(var i=0; i<elements.length; i++)
+    {
+        formData.append(elements[i].name, elements[i].value);
+    }
+    var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function()
+        {
+            if(xmlHttp.readyState == 4)
+            {
+                if(xmlHttp.status == 200){
+                    document.getElementById('message-form').reset();
+                    document.getElementById('result-status').style.display = "block";
+                }else{
+                    window.alert('Error in sending Message\nPlease try after sometime or try a different way to contact');
+                }
+                
+            }
+        }
+        xmlHttp.open("post", "https://script.google.com/macros/s/AKfycbwW6ynkMq3Y-hGSqeqFth4F_NhTMiUWAgOdJjUXtw/exec"); 
+        xmlHttp.send(formData); 
 }
 
 changeToolPic();
