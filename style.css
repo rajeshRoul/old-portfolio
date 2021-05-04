@@ -30,6 +30,7 @@ body{
 /* Header customizations */
 header{
     width: 100%;
+    box-sizing: border-box;
     height : fit-content;
     display: flex;
     justify-content: center;
@@ -542,11 +543,11 @@ main{
         padding: 40px 0;
     }
     .ex-education:nth-child(n){
-        width: 92%;
+        width: 90%;
         background-image: linear-gradient(to bottom right, var(--color-secondary), var(--color-primary-light), var(--color-primary));
         padding: 5px;
         border-radius: 5px;
-        box-shadow: 5px -5px 5px 2px rgba(18, 22, 53, 0.411);
+        box-shadow: -5px -5px 5px 2px rgba(18, 22, 53, 0.411);
         margin-bottom: 30px;
         position: relative;
         left: 8%;
@@ -560,8 +561,31 @@ main{
         z-index: 1;
         border-left: 3px dashed var(--color-secondary-light);
     }
+    .plane-car i{
+        font-size: 2rem;
+        transform: rotate(90deg);
+        color: var(--color-accent-light);
+        position: absolute;
+        left: -20px;
+        top: -12px;
+        text-shadow: 0 0 8px red;
+    }
 }
-
+@media only screen and (max-width: 440px) {
+    .ex-education-header{
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        /* justify-content: space-between; */
+        color: var(--color-text);
+    }
+    .ex-education-header img{
+        height: 80px;
+        width: 120px;
+        background-color: white;
+        padding: 8px;
+    }
+}
                     /* Experience/Education Section End */
 
                     /* Certificates Section Start */
@@ -574,6 +598,7 @@ main{
 }
 
 #certificates-content{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -586,6 +611,7 @@ main{
 }
 
 .certificate{
+    width: 500px;
     display: flex;
     padding: 10px;
     background-image: radial-gradient(var(--color-primary-light) 60%, var(--color-primary));
@@ -593,14 +619,26 @@ main{
 }
 
 .certificate img{
-    height: 150px;
+    height: 120px;
     margin-right: 15px;
 }
 
 .certificate div *{
     color: var(--color-text);
 }
-                    /* Certificates Section Start */
+
+/* Certificates Section Responsiveness */
+@media only screen and (max-width: 1100px) {
+    .certificate{
+        width: 95%;
+        flex-direction: column;
+    }
+    .certificate img{
+        height: 100px;
+        width: 120px;
+    }
+}
+                    /* Certificates Section End */
 
                     /* Accomplishment Section Start */
 #section-accomplishment{
@@ -648,6 +686,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0px 5px;
 }
 
 #portfolio-content *{
@@ -757,3 +796,32 @@ main{
 #contact-social ul li:hover{
     box-shadow: 0 0 3px 3px var(--color-text);
 }
+
+/* Contact Section Responsiveness */
+@media only screen and (max-width: 760px) {
+    #top-outer-contact-div{
+        flex-direction: column;
+    }
+    #message-form{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0px 10px;
+    }
+    #get-in-touch-div{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0px 10px;
+    }
+}
+                    /* Contact Section End */
+
+                    /* Footer Start */
+footer{
+    padding: 10px 10px;
+    background-color: var(--color-primary);
+}
+
+footer *{
+    color: var(--color-text);
+}
+                    /* Footer End */
