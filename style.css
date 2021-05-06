@@ -123,10 +123,12 @@ main{
     height: 100vh;
     margin: 0;
     /* Profile section background image settings */
-    background-image: url(pics/background.jpg);
+    background-image: radial-gradient(var(--color-primary-light), var(--color-secondary), var(--color-primary));
+    transition: background-image 1.5s linear;
+    /* background-image: url(pics/background.jpg);
     background-attachment: fixed;
     background-size: cover;
-    background-position: center;
+    background-position: center;*/
     overflow: hidden;
 }
 
@@ -356,6 +358,7 @@ main{
     font-weight: bold;
     margin-left: 5px;
     font-size: 1.2rem;
+    white-space: nowrap;
 }
 
 /* Skills Responsiveness */
@@ -389,22 +392,22 @@ main{
 }
 
 .seventy-percent{
-    width: 70%;
+    /* width: 70%; */
     background-color: darkcyan;
 }
 
 .eighty-percent{
-    width: 80%;
+    /* width: 80%; */
     background-color: darkmagenta;
 }
 
 .ninety-percent{
-    width: 90%;
+    /* width: 90%; */
     background-color: rgb(45, 129, 179);
 }
 
 .hundred-percent{
-    width: 100%;
+    /* width: 100%; */
     background-color: darkgreen;
 }
                     /* Skills section End */
@@ -798,12 +801,26 @@ main{
 }
 
 #result-status{
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
     background-image: linear-gradient(to right, green, rgb(0, 73, 0));
     color: var(--color-text);
     padding: 0px 3px;
     margin-top: 5px;
     border-radius: 10px;
+    /* display: none; */
+    transition: opacity 2s ease-in-out;
     display: none;
+    opacity: 0;
+    height: 0px;
+    overflow: hidden;
+}
+
+.result-stat-class{
+    display: block !important;
+    opacity: 1 !important;
+    height: auto !important;
 }
 
 /* Contact Section Responsiveness */
