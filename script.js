@@ -140,15 +140,13 @@ function initializeStars(){
         big.classList.add('star');
         container.appendChild(big);
         // Get coordinate in percentage
+        var rect = container.getBoundingClientRect();
         let top = container.clientHeight;
         let left = container.clientWidth;
-        console.log(top + " " + left);
-        top = event.clientY/top;
+        top = (event.clientY - rect.top)/top;
         left = event.clientX/left;
-        console.log(top + " " + left);
         top = top * 100;
         left = left * 100;
-        console.log(top + " " + left);
         big.style.top = top + "%";
         big.style.left = left + "%";
     })
