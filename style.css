@@ -123,12 +123,7 @@ main{
     height: 100vh;
     margin: 0;
     /* Profile section background image settings */
-    background-image: radial-gradient(var(--color-primary-light), var(--color-secondary), var(--color-primary));
-    transition: background-image 1.5s linear;
-    /* background-image: url(pics/background.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;*/
+    background-image: linear-gradient(to bottom right,  darkmagenta, var(--color-primary-light), var(--color-primary));
     overflow: hidden;
 }
 
@@ -146,17 +141,58 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    z-index: 1;
 }
 
 /* knowledge icon showing icons of tools */
 #knowledge-icon{
     width: 220px;
     height: 150px;
-    transition: all ease-in-out 1s;
-    filter: drop-shadow(0px 0px 3px white);
+    padding: 5px;
     border: 2px solid white;
     background-color: #20202086;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+#knowledge-icon-img{
+    width: 0;
+    height: 0;
+    transition: all ease-in-out 1s;
+    filter: drop-shadow(0px 0px 2px white);
+}
+
+/* Stars effect */
+.star-small{
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 3px 2px white;
+    transition: width ease-in-out 2s, height ease-in-out 2s;
+}
+
+.star{
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    
+    transition: width ease-in-out 2s, height ease-in-out 2s;
+    animation: glow 1s ease-in infinite alternate;
+}
+
+@keyframes glow {
+    from {
+      box-shadow: 0 0 5px 2px rgb(194, 194, 194);
+    }
+    to {
+        box-shadow: 0 0 5px 3px rgb(255, 255, 255);
+    }
+  }
 
 /* Swipe up or click to hide profile page */
 
@@ -248,7 +284,7 @@ main{
         height: 100vh;
     }
     #profile-content-pic{
-        height: fit-content;
+        height: min-content;
         width: 100%;
     }
     #profile-pic{
@@ -657,6 +693,7 @@ main{
 #accomplishment-content{
     background-color: var(--color-primary-light);
     padding: 30px 10px;
+    margin: 0px 15px;
     border-radius: 10px;
 }
 

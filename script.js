@@ -1,9 +1,7 @@
-let animationImage = document.getElementById('profile-animation');
-
-
 // For animation behind profile pic
 // this will rotate a png image behind profile pic
 var profileAnimation = function(){
+    let animationImage = document.getElementById('profile-animation');
     let angle = 0;
     let flag = true;
     setInterval(function(){
@@ -22,6 +20,7 @@ var profileAnimation = function(){
     }, 200);
 }
 
+// Display Skills Tools
 var changeToolPic = function(){
     let tools = [
         "pics/tool-logos/html.png",
@@ -31,16 +30,13 @@ var changeToolPic = function(){
         "pics/tool-logos/node.svg",
         "pics/tool-logos/java.png"
     ]
-    let image = document.getElementById('knowledge-icon');
-    let i=0, bgi = 0;
+    let image = document.getElementById('knowledge-icon-img');
+    let i=0; 
     let flag = true;
-    let bg = ["radial-gradient(var(--color-primary-light) 33%, var(--color-secondary) 66%, var(--color-primary) 100%)",
-"radial-gradient(var(--color-primary) 33%, var(--color-primary-light) 66%, var(--color-secondary) 100%)",
-"radial-gradient(var(--color-secondary) 33%, var(--color-primary) 66%, var(--color-primary-light) 100%)"]
     setInterval(function(){
         if(flag){
             image.style.width = "220px";
-            // image.style.height = "160px";
+            image.style.height = "150px";
             if(i >= tools.length){
                 i=0;
             }
@@ -49,17 +45,13 @@ var changeToolPic = function(){
             flag = false;
         }else{
             image.style.width = 0;
-            // image.style.height = 0;
+            image.style.height = 0;
             flag = true;
         }
-        if(bgi>2){
-            bgi=0;
-        }
-        document.getElementById("section-profile").style.backgroundImage = bg[bgi];
-        bgi++;
     }, 1500);
 }
 
+// Form Submit function
 function myFunction()
 {
     var elements = document.getElementsByClassName("formVal");
@@ -89,52 +81,105 @@ function myFunction()
         xmlHttp.send(formData); 
 }
 
-changeToolPic();
-profileAnimation();
-
-let headerButton = document.getElementById("header-option-button");
-let headerItems = document.getElementById("header-options-small-screen");
-headerButton.addEventListener('click', function(){
-        headerItems.classList.toggle("header-options-hide");
-        headerItems.classList.toggle("header-options-view");
-});
-
-
-var bars = document.querySelectorAll(".skill-percent");
-
-// bars[0].style.width = '10%';
-var isFilled = [];
-
-for(let i=0; i<bars.length; i++){
-    isFilled.push(false);
-    bars[i].style.width = '0%';
+// Header Option Function
+function headerOption(){
+    let headerButton = document.getElementById("header-option-button");
+    let headerItems = document.getElementById("header-options-small-screen");
+    headerButton.addEventListener('click', function(){
+            headerItems.classList.toggle("header-options-hide");
+            headerItems.classList.toggle("header-options-view");
+    });
 }
 
-function initialize(index){
-    bars[index].style.width = "0%";
-    isFilled[index] = false;
+// Fill Bars Animation
+function fillBars(){
+    var bars = document.querySelectorAll(".skill-percent");
+    var isFilled = [];
+    for(let i=0; i<bars.length; i++){
+        isFilled.push(false);
+        bars[i].style.width = '0%';
+    }
+
+    function initialize(index){
+        bars[index].style.width = "0%";
+        isFilled[index] = false;
+    }
+
+    function fillBar(index, width){
+        let count = 0;
+        let interval = setInterval(function(){
+            count++;
+            bars[index].style.width = count + "%";
+            if(count >= width){
+                clearInterval(interval);
+            }
+        }, 20);
+    }
+    window.addEventListener("scroll", function(){
+        for(let i=0; i < bars.length; i++){
+            let coor = bars[i].getBoundingClientRect();
+            if(!isFilled[i] && window.innerHeight > coor.y){
+                let width = bars[i].getAttribute("data-value");
+                fillBar(i, width);
+                isFilled[i] = true;
+            }else if(window.innerHeight < coor.y){
+                initialize(i);
+            }
+        }
+    });
 }
 
-function fillBar(index, width){
+// Initialize big and small stars
+function initializeStars(){
+    let container = document.getElementById('section-profile');
     let count = 0;
+
+    // Add Star Manually
+    container.addEventListener('click', function(event){
+        let big = document.createElement("div");
+        big.classList.add('star');
+        container.appendChild(big);
+        // Get coordinate in percentage
+        let top = container.clientHeight;
+        let left = container.clientWidth;
+        console.log(top + " " + left);
+        top = event.clientY/top;
+        left = event.clientX/left;
+        console.log(top + " " + left);
+        top = top * 100;
+        left = left * 100;
+        console.log(top + " " + left);
+        big.style.top = top + "%";
+        big.style.left = left + "%";
+    })
+
+    // Add Star in Intervals automatically
     let interval = setInterval(function(){
+        let big = document.createElement("div");
+        big.classList.add('star');
+        let smallA = document.createElement("div");
+        smallA.classList.add('star-small');
+        let smallB = document.createElement("div");
+        smallB.classList.add('star-small');
+        container.appendChild(big);
+        container.appendChild(smallA);
+        container.appendChild(smallB);
+        big.style.top = Math.floor(Math.random() * 100) + "%";
+        big.style.left = Math.floor(Math.random() * 100) + "%";
+        smallA.style.top = Math.floor(Math.random() * 100) + "%";
+        smallA.style.left = Math.floor(Math.random() * 100) + "%";
+        smallB.style.top = Math.floor(Math.random() * 100) + "%";
+        smallB.style.left = Math.floor(Math.random() * 100) + "%";
         count++;
-        bars[index].style.width = count + "%";
-        if(count >= width){
+        if(count > 50){
             clearInterval(interval);
         }
-    }, 20);
+    },100);
 }
 
-window.addEventListener("scroll", function(){
-    for(let i=0; i < bars.length; i++){
-        let coor = bars[i].getBoundingClientRect();
-        if(!isFilled[i] && window.innerHeight > coor.y){
-            let width = bars[i].getAttribute("data-value");
-            fillBar(i, width);
-            isFilled[i] = true;
-        }else if(window.innerHeight < coor.y){
-            initialize(i);
-        }
-    }
-});
+
+changeToolPic();
+profileAnimation();
+headerOption();
+initializeStars();
+fillBars();
