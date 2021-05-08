@@ -35,8 +35,8 @@ var changeToolPic = function(){
     let flag = true;
     setInterval(function(){
         if(flag){
-            image.style.width = "220px";
-            image.style.height = "150px";
+            image.style.width = "180px";
+            image.style.height = "120px";
             if(i >= tools.length){
                 i=0;
             }
