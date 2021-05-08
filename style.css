@@ -620,7 +620,7 @@ main{
     }
     .ex-education-header img{
         height: 80px;
-        width: 120px;
+        width: 100px;
         background-color: white;
         padding: 8px;
     }
@@ -658,12 +658,17 @@ main{
 }
 
 .certificate img{
-    height: 120px;
+    height: 100px;
     margin-right: 15px;
 }
 
 .certificate div *{
     color: var(--color-text);
+    margin: 5px;
+}
+
+.certificate div h1{
+    text-decoration: underline;
 }
 
 /* Certificates Section Responsiveness */
@@ -712,8 +717,8 @@ main{
 }
                     /* Accomplishment Section End */
 
-                    /* Portfolio Section Start */
-#section-portfolio{
+                    /* Projects Section Start */
+#section-projects{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -721,7 +726,7 @@ main{
     padding: 40px 0px;
 }
 
-#portfolio-content{
+#projects-content{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -729,7 +734,7 @@ main{
     margin: 0px 5px;
 }
 
-#portfolio-content *{
+#projects-content *{
     color: var(--color-text);
 
 }
