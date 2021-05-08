@@ -51,7 +51,7 @@ var changeToolPic = function(){
             }
         }
         
-    }, 3000);
+    }, 1500);
 }
 
 // Form Submit function
