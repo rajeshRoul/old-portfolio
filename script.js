@@ -22,6 +22,7 @@ var profileAnimation = function(){
 
 // Display Skills Tools
 var changeToolPic = function(){
+    let image = document.getElementById('knowledge-icon-img');
     let tools = [
         "pics/tool-logos/html.png",
         "pics/tool-logos/css.png",
@@ -29,26 +30,28 @@ var changeToolPic = function(){
         "pics/tool-logos/javascript.png",
         "pics/tool-logos/node.svg",
         "pics/tool-logos/java.png"
-    ]
-    let image = document.getElementById('knowledge-icon-img');
+    ];
     let i=0; 
     let flag = true;
     setInterval(function(){
-        if(flag){
-            image.style.width = "180px";
-            image.style.height = "120px";
-            if(i >= tools.length){
-                i=0;
+        if(window.getComputedStyle(document.getElementById('knowledge-icon')).display != 'none'){
+            if(flag){
+                image.style.width = "180px";
+                image.style.height = "120px";
+                if(i >= tools.length){
+                    i=0;
+                }
+                image.setAttribute("src", tools[i]);
+                i += 1;
+                flag = false;
+            }else{
+                image.style.width = 0;
+                image.style.height = 0;
+                flag = true;
             }
-            image.setAttribute("src", tools[i]);
-            i += 1;
-            flag = false;
-        }else{
-            image.style.width = 0;
-            image.style.height = 0;
-            flag = true;
         }
-    }, 1500);
+        
+    }, 3000);
 }
 
 // Form Submit function
