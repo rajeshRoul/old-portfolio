@@ -1,3 +1,70 @@
+/* Preloader Start*/
+#spinner-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-primary-light);
+    z-index: 999999;
+}
+
+.spinner {
+    position: absolute;
+    top: 48%;
+    left: 48%;
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    font-size: 10px;
+  }
+  
+  .spinner > div {
+    background-color: var(--color-accent);
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+    
+    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  }
+  
+  .spinner .rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+  }
+  
+  .spinner .rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+  
+  .spinner .rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+  }
+  
+  .spinner .rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+  }
+  
+  @-webkit-keyframes sk-stretchdelay {
+    0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+    20% { -webkit-transform: scaleY(1.0) }
+  }
+  
+  @keyframes sk-stretchdelay {
+    0%, 40%, 100% { 
+      transform: scaleY(0.4);
+      -webkit-transform: scaleY(0.4);
+    }  20% { 
+      transform: scaleY(1.0);
+      -webkit-transform: scaleY(1.0);
+    }
+  }
+/* Preloader End */
+
 /* Applies to whole page */
 * {
     font-family: Arial, Helvetica, sans-serif;
@@ -70,6 +137,10 @@ header a:hover{
     display: none;
 }
 
+#header-option-button:hover i{
+    color: var(--color-secondary-light);
+}
+
 .header-options-view{
     display: flex;
     width: 100%;
@@ -83,6 +154,10 @@ header a:hover{
     width: 0;
     height: 0;
     overflow: hidden;
+}
+
+header *{
+    transition: all ease-in-out 1s;
 }
 
 @media only screen and (min-width: 880px) {
@@ -647,6 +722,10 @@ main{
 #certificates-content a{
     text-decoration: none;
     margin: 30px;
+}
+
+#certificates-content a:hover h1{
+    color: var(--color-secondary-light);
 }
 
 .certificate{

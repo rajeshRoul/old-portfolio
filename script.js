@@ -1,3 +1,21 @@
+// For Preloader
+setTimeout( function(){
+    var callback = function(){
+        // Handler when the DOM is fully loaded
+        let preloader = document.getElementById('spinner-wrapper');
+        preloader.remove();
+      };
+      
+      if (
+          document.readyState === "complete" ||
+          (document.readyState !== "loading" && !document.documentElement.doScroll)
+      ) {
+        callback();
+      } else {
+        document.addEventListener("DOMContentLoaded", callback);
+      }
+},3000);
+
 // For animation behind profile pic
 // this will rotate a png image behind profile pic
 var profileAnimation = function(){
@@ -87,8 +105,11 @@ function myFunction()
 // Header Option Function
 function headerOption(){
     let headerButton = document.getElementById("header-option-button");
+    let headerIcon = document.querySelector("#header-option-button i");
     let headerItems = document.getElementById("header-options-small-screen");
     headerButton.addEventListener('click', function(){
+            headerIcon.classList.toggle('fa-times');
+            headerIcon.classList.toggle('fa-bars');
             headerItems.classList.toggle("header-options-hide");
             headerItems.classList.toggle("header-options-view");
     });
