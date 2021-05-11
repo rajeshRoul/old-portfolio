@@ -1,9 +1,15 @@
 // For Preloader
-setTimeout( function(){
+(function(){
     var callback = function(){
         // Handler when the DOM is fully loaded
         let preloader = document.getElementById('spinner-wrapper');
-        preloader.remove();
+        preloader.style.top = "-100%";
+        preloader.style.bottom = "100%";
+        setTimeout(function(){
+            preloader.remove();
+            profileAnimation();
+            initializeStars();
+        },1000);
       };
       
       if (
@@ -14,7 +20,7 @@ setTimeout( function(){
       } else {
         document.addEventListener("DOMContentLoaded", callback);
       }
-},3000);
+})();
 
 // For animation behind profile pic
 // this will rotate a png image behind profile pic
@@ -201,7 +207,6 @@ function initializeStars(){
 
 
 changeToolPic();
-profileAnimation();
 headerOption();
-initializeStars();
+
 fillBars();

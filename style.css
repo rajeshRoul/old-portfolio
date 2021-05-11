@@ -7,6 +7,7 @@
     bottom: 0;
     background-color: var(--color-primary-light);
     z-index: 999999;
+    transition: all ease-in-out 1s;
 }
 
 .spinner {
