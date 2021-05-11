@@ -67,6 +67,7 @@ var profileAnimation = function(){
 // Display Skills Tools
 var changeToolPic = function(){
     let image = document.getElementById('knowledge-icon-img');
+    let imageBox = document.getElementById('knowledge-icon');
     let tools = [
         "pics/tool-logos/html.png",
         "pics/tool-logos/css.png",
@@ -78,7 +79,8 @@ var changeToolPic = function(){
     let i=0; 
     let flag = true;
     setInterval(function(){
-        if(window.getComputedStyle(document.getElementById('knowledge-icon')).display != 'none'){
+
+        if((window.getComputedStyle(document.getElementById('knowledge-icon')).display != 'none') && imageBox.getBoundingClientRect().bottom > 0){
             if(flag){
                 image.style.width = "180px";
                 image.style.height = "120px";
@@ -225,6 +227,7 @@ function initializeStars(){
     },100);
 }
 
+// Change Plane direction on scroll
 function planeDirection(){
     var scrollPos = 0;
     window.addEventListener('scroll', function(){
