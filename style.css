@@ -635,6 +635,7 @@ main{
     left: -30px;
     top: -12px;
     text-shadow: 0 0 8px red;
+    transition: transform 1s;
 }
 
 .dots-div{

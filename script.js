@@ -225,8 +225,24 @@ function initializeStars(){
     },100);
 }
 
+function planeDirection(){
+    var scrollPos = 0;
+    window.addEventListener('scroll', function(){
+        var element = document.querySelectorAll('.plane-car i');
+    if ((document.body.getBoundingClientRect()).top > scrollPos){
+            element[0].setAttribute("style", "transform: rotate(270deg)");
+            element[1].setAttribute("style", "transform: rotate(270deg)");
+    } else{
+        element[0].setAttribute("style", "transform: rotate(90deg)");
+        element[1].setAttribute("style", "transform: rotate(90deg)");
+    }
+    scrollPos = (document.body.getBoundingClientRect()).top;
+    });
+}
+
 
 
 headerOption();
+planeDirection();
 
 fillBars();
