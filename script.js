@@ -1,7 +1,8 @@
 // For Preloader
-(function(){
-    var callback = function(){
-        // Handler when the DOM is fully loaded
+setTimeout(function(){
+    // Handles when profile image and animation are loaded
+    // It removes preloader
+    var loadedCallback = function(){
         let preloader = document.getElementById('spinner-wrapper');
         preloader.style.top = "-100%";
         preloader.style.bottom = "100%";
@@ -10,6 +11,24 @@
             profileAnimation();
             initializeStars();
         },1000);
+    };
+
+    var callback = function(){
+        // Handler when the DOM is fully loaded
+        let imageProfile = document.getElementById('profile-pic');
+        let imageAnimation = document.getElementById('profile-animation');
+        if(imageProfile.complete && imageAnimation.complete){
+            loadedCallback();
+        }else{
+            imageProfile.addEventListener('load', function(){
+                if(imageAnimation.complete){
+                    loadedCallback;
+                }else{
+                    imageAnimation.addEventListener('load', loadedCallback);
+                }
+            })
+        }
+        
       };
       
       if (
@@ -20,7 +39,7 @@
       } else {
         document.addEventListener("DOMContentLoaded", callback);
       }
-})();
+},1000);
 
 // For animation behind profile pic
 // this will rotate a png image behind profile pic
