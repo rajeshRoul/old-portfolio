@@ -9,6 +9,7 @@ setTimeout(function(){
         setTimeout(function(){
             preloader.remove();
             profileAnimation();
+            changeToolPic();
             initializeStars();
         },1000);
     };
@@ -225,7 +226,7 @@ function initializeStars(){
 }
 
 
-changeToolPic();
+
 headerOption();
 
 fillBars();
