@@ -1,29 +1,17 @@
 // For Preloader
+let preloaderTimeCount=0;
 setTimeout(function(){
     // Handles when profile image and animation are loaded
-    // It removes preloader
-    var loadedCallback = function(){
-        let preloader = document.getElementById('spinner-wrapper');
-        preloader.style.top = "-100%";
-        preloader.style.bottom = "100%";
-        setTimeout(function(){
-            preloader.remove();
-            profileAnimation();
-            changeToolPic();
-            initializeStars();
-        },1000);
-    };
-
     var callback = function(){
         // Handler when the DOM is fully loaded
         let imageProfile = document.getElementById('profile-pic');
         let imageAnimation = document.getElementById('profile-animation');
         if(imageProfile.complete && imageAnimation.complete){
-            loadedCallback();
+            PreloaderloadedCallback();
         }else{
             imageProfile.addEventListener('load', function(){
                 if(imageAnimation.complete){
-                    loadedCallback;
+                    PreloaderloadedCallback;
                 }else{
                     imageAnimation.addEventListener('load', loadedCallback);
                 }
@@ -41,6 +29,24 @@ setTimeout(function(){
         document.addEventListener("DOMContentLoaded", callback);
       }
 },1000);
+
+// To removes preloader
+var PreloaderloadedCallback = function(){
+    let preloader = document.getElementById('spinner-wrapper');
+    preloader.style.top = "-100%";
+    preloader.style.bottom = "100%";
+    setTimeout(function(){
+        preloader.remove();
+        profileAnimation();
+        changeToolPic();
+        initializeStars();
+    },1000);
+};
+
+// Handles Maximum preloader time
+setTimeout(function(){
+    PreloaderloadedCallback;
+},5000)
 
 // For animation behind profile pic
 // this will rotate a png image behind profile pic
@@ -144,7 +150,7 @@ function headerOption(){
 }
 
 // Fill Bars Animation
-function fillBars(){
+function fillSkillBars(){
     var bars = document.querySelectorAll(".skill-percent");
     var isFilled = [];
     for(let i=0; i<bars.length; i++){
@@ -248,4 +254,4 @@ function planeDirection(){
 headerOption();
 planeDirection();
 
-fillBars();
+fillSkillBars();
