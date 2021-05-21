@@ -1,9 +1,7 @@
-console.log('jsloaded');
 // To removes preloader
 var isPreloaderRemoved = false;
 function PreloaderloadedCallback(){
     if(!isPreloaderRemoved){
-        console.log('Preloader Removed');
         let preloader = document.getElementById('spinner-wrapper');
         preloader.style.top = "-100%";
         preloader.style.bottom = "100%";
@@ -25,22 +23,16 @@ setTimeout(function(){
         let imageProfile = document.getElementById('profile-pic');
         let imageAnimation = document.getElementById('profile-animation');
         if(imageProfile.complete ){
-            console.log("Profile Image load Complete");
             if(imageAnimation.complete){
-                console.log("Profile Animation load Complete");
                 PreloaderloadedCallback();
             }else{
-                console.log("Profile Animation Listener load Complete");
                 imageAnimation.addEventListener('load', PreloaderloadedCallback);
             }
         }else{
             imageProfile.addEventListener('load', function(){
-                console.log("Profile Image load Complete");
                 if(imageAnimation.complete){
-                    console.log("Profile Animation load Complete");
                     PreloaderloadedCallback();
                 }else{
-                    console.log("Profile Animation Listener load Complete");
                     imageAnimation.addEventListener('load', PreloaderloadedCallback);
                 }
             })
@@ -59,7 +51,6 @@ setTimeout(function(){
 
 // Handles Maximum preloader time
 setTimeout(function(){
-    console.log("Max Timeout Triggered");
     PreloaderloadedCallback();
 },5000)
 
