@@ -1,7 +1,9 @@
+console.log('jsloaded');
 // To removes preloader
 var isPreloaderRemoved = false;
 var PreloaderloadedCallback = function(){
     if(!isPreloaderRemoved){
+        console.log('Preloader Removed');
         let preloader = document.getElementById('spinner-wrapper');
         preloader.style.top = "-100%";
         preloader.style.bottom = "100%";
