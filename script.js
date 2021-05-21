@@ -38,7 +38,7 @@ setTimeout(function(){
                 console.log("Profile Image load Complete");
                 if(imageAnimation.complete){
                     console.log("Profile Animation load Complete");
-                    PreloaderloadedCallback;
+                    PreloaderloadedCallback();
                 }else{
                     console.log("Profile Animation Listener load Complete");
                     imageAnimation.addEventListener('load', PreloaderloadedCallback);
@@ -60,7 +60,7 @@ setTimeout(function(){
 // Handles Maximum preloader time
 setTimeout(function(){
     console.log("Max Timeout Triggered");
-    PreloaderloadedCallback;
+    PreloaderloadedCallback();
 },5000)
 
 // For animation behind profile pic
