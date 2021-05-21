@@ -1,5 +1,21 @@
-// For Preloader
-let preloaderTimeCount=0;
+// To removes preloader
+var isPreloaderRemoved = false;
+var PreloaderloadedCallback = function(){
+    if(!isPreloaderRemoved){
+        let preloader = document.getElementById('spinner-wrapper');
+        preloader.style.top = "-100%";
+        preloader.style.bottom = "100%";
+        setTimeout(function(){
+            preloader.remove();
+            profileAnimation();
+            changeToolPic();
+            initializeStars();
+        },1000);
+    }
+    isPreloaderRemoved = true;
+};
+
+// Handles Preloader
 setTimeout(function(){
     // Handles when profile image and animation are loaded
     var callback = function(){
@@ -13,7 +29,7 @@ setTimeout(function(){
                 if(imageAnimation.complete){
                     PreloaderloadedCallback;
                 }else{
-                    imageAnimation.addEventListener('load', loadedCallback);
+                    imageAnimation.addEventListener('load', PreloaderloadedCallback);
                 }
             })
         }
@@ -29,19 +45,6 @@ setTimeout(function(){
         document.addEventListener("DOMContentLoaded", callback);
       }
 },1000);
-
-// To removes preloader
-var PreloaderloadedCallback = function(){
-    let preloader = document.getElementById('spinner-wrapper');
-    preloader.style.top = "-100%";
-    preloader.style.bottom = "100%";
-    setTimeout(function(){
-        preloader.remove();
-        profileAnimation();
-        changeToolPic();
-        initializeStars();
-    },1000);
-};
 
 // Handles Maximum preloader time
 setTimeout(function(){
