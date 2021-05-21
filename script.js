@@ -25,16 +25,22 @@ setTimeout(function(){
         let imageProfile = document.getElementById('profile-pic');
         let imageAnimation = document.getElementById('profile-animation');
         if(imageProfile.complete ){
+            console.log("Profile Image load Complete");
             if(imageAnimation.complete){
+                console.log("Profile Animation load Complete");
                 PreloaderloadedCallback();
             }else{
+                console.log("Profile Animation Listener load Complete");
                 imageAnimation.addEventListener('load', PreloaderloadedCallback);
             }
         }else{
             imageProfile.addEventListener('load', function(){
+                console.log("Profile Image load Complete");
                 if(imageAnimation.complete){
+                    console.log("Profile Animation load Complete");
                     PreloaderloadedCallback;
                 }else{
+                    console.log("Profile Animation Listener load Complete");
                     imageAnimation.addEventListener('load', PreloaderloadedCallback);
                 }
             })
@@ -53,6 +59,7 @@ setTimeout(function(){
 
 // Handles Maximum preloader time
 setTimeout(function(){
+    console.log("Max Timeout Triggered");
     PreloaderloadedCallback;
 },5000)
 
