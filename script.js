@@ -1,7 +1,7 @@
 console.log('jsloaded');
 // To removes preloader
 var isPreloaderRemoved = false;
-var PreloaderloadedCallback = function(){
+function PreloaderloadedCallback(){
     if(!isPreloaderRemoved){
         console.log('Preloader Removed');
         let preloader = document.getElementById('spinner-wrapper');
@@ -24,8 +24,12 @@ setTimeout(function(){
         // Handler when the DOM is fully loaded
         let imageProfile = document.getElementById('profile-pic');
         let imageAnimation = document.getElementById('profile-animation');
-        if(imageProfile.complete && imageAnimation.complete){
-            PreloaderloadedCallback();
+        if(imageProfile.complete ){
+            if(imageAnimation.complete){
+                PreloaderloadedCallback();
+            }else{
+                imageAnimation.addEventListener('load', PreloaderloadedCallback);
+            }
         }else{
             imageProfile.addEventListener('load', function(){
                 if(imageAnimation.complete){
@@ -37,10 +41,9 @@ setTimeout(function(){
         }
         
       };
-      
       if (
           document.readyState === "complete" ||
-          (document.readyState !== "loading" && !document.documentElement.doScroll)
+          (document.readyState !== "loading")
       ) {
         callback();
       } else {
@@ -74,7 +77,6 @@ var profileAnimation = function(){
         animationImage.setAttribute("style", "transform: rotate(" + angle + "deg)");
     }, 200);
 }
-
 // Display Skills Tools
 var changeToolPic = function(){
     let image = document.getElementById('knowledge-icon-img');
@@ -110,7 +112,6 @@ var changeToolPic = function(){
         
     }, 1500);
 }
-
 // Form Submit function
 function myFunction()
 {
@@ -140,7 +141,6 @@ function myFunction()
         xmlHttp.open("post", "https://script.google.com/macros/s/AKfycbwW6ynkMq3Y-hGSqeqFth4F_NhTMiUWAgOdJjUXtw/exec"); 
         xmlHttp.send(formData); 
 }
-
 // Header Option Function
 function headerOption(){
     let headerButton = document.getElementById("header-option-button");
@@ -153,7 +153,6 @@ function headerOption(){
             headerItems.classList.toggle("header-options-view");
     });
 }
-
 // Fill Bars Animation
 function fillSkillBars(){
     var bars = document.querySelectorAll(".skill-percent");
@@ -191,7 +190,6 @@ function fillSkillBars(){
         }
     });
 }
-
 // Initialize big and small stars
 function initializeStars(){
     let container = document.getElementById('section-profile');
@@ -237,7 +235,6 @@ function initializeStars(){
         }
     },100);
 }
-
 // Change Plane direction on scroll
 function planeDirection(){
     var scrollPos = 0;
@@ -253,10 +250,6 @@ function planeDirection(){
     scrollPos = (document.body.getBoundingClientRect()).top;
     });
 }
-
-
-
 headerOption();
 planeDirection();
-
 fillSkillBars();
