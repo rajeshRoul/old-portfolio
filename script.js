@@ -62,18 +62,18 @@ var profileAnimation = function(){
     let flag = true;
     setInterval(function(){
         if(flag){
-            angle += 5;
+            angle += 0.5;
         }else{
-            angle -= 5;
+            angle -= 0.5;
         }
         
-        if(angle >= 355){
+        if(angle >= 359.5){
             flag = false
-        }else if(angle <= 5){
+        }else if(angle <= 0.5){
             flag = true;
         }
         animationImage.setAttribute("style", "transform: rotate(" + angle + "deg)");
-    }, 200);
+    }, 30);
 }
 // Display Skills Tools
 var changeToolPic = function(){
@@ -108,7 +108,7 @@ var changeToolPic = function(){
             }
         }
         
-    }, 1500);
+    }, 2000);
 }
 // Form Submit function
 function myFunction()
