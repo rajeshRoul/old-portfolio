@@ -198,6 +198,7 @@ main{
 #section-profile {
     width: 100%;
     height: 100vh;
+    cursor: pointer;
     margin: 0;
     /* Profile section background image settings */
     background-image: linear-gradient(to bottom right,  darkmagenta, var(--color-primary-light), var(--color-primary));
@@ -330,6 +331,7 @@ main{
 /* Adjustments for profile pic */
 #profile-pic{
     border-radius: 50%;
+    cursor: auto;
     width: 300px;
     height: 300px;
     border: 2px solid white;
@@ -902,6 +904,7 @@ main{
 
 .project-details button:hover{
     background-image: linear-gradient(to right, var(--color-primary-light), darkgreen);
+    cursor: pointer;
 }
 
 .project:hover .project-details{
@@ -991,6 +994,7 @@ main{
 
 #message-form button:hover{
     border-color: var(--color-secondary-light);
+    cursor: pointer;
 }
 
 #message-form button:focus{
